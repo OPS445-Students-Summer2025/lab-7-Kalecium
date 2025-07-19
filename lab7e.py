@@ -13,9 +13,13 @@ class Time:
         self.minute = minute
         self.second = second
 
-    def format_time(self):
+    def __str__(self):
         """Return time object (t) as a formatted string"""
         return f'{self.hour:02d}:{self.minute:02d}:{self.second:02d}'
+    
+    def __repr__(self):
+        """Return time object (t) as a formatted string"""
+        return f'{self.hour:02d}.{self.minute:02d}.{self.second:02d}'
 
     def sum_times(self, t2):
         """Add two time objests and return the sum."""
@@ -53,3 +57,4 @@ def sec_to_time(seconds):
     minutes, time.second = divmod(seconds, 60)
     time.hour, time.minute = divmod(minutes, 60)
     return time
+
